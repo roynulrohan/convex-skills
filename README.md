@@ -1,8 +1,8 @@
 # Convex Skills
 
-AI agent skills for [Convex](https://convex.dev) development, following the [Agent Skills](https://skills.sh) open format.
+Community [Agent Skills](https://skills.sh) for [Convex](https://convex.dev) development — covering areas the official AI files don't.
 
-Existing Convex skill sets were outdated, incomplete, or scattered. These skills merge official and community sources, fill the gaps, and verify everything against official documentation and source code.
+> **For core Convex guidance**, use the official AI files: `npx convex ai-files install` and `npx skills add get-convex/agent-skills`. These skills complement the official ones — they don't replace them.
 
 ## Install
 
@@ -11,7 +11,6 @@ Existing Convex skill sets were outdated, incomplete, or scattered. These skills
 npx skills add roynulrohan/convex-skills --all
 
 # Or pick what you need
-npx skills add roynulrohan/convex-skills -s convex
 npx skills add roynulrohan/convex-skills -s convex-components
 npx skills add roynulrohan/convex-skills -s convex-helpers
 npx skills add roynulrohan/convex-skills -s convex-agents
@@ -24,28 +23,27 @@ Clone the repo and copy the skills you need into your project's `.claude/skills/
 
 ```bash
 git clone https://github.com/roynulrohan/convex-skills.git
-cp -r convex-skills/skills/convex .claude/skills/
+cp -r convex-skills/skills/convex-components .claude/skills/
 ```
 
 ## Available Skills
 
-| Skill                                          | Description                                                                                                                                 |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [convex](skills/convex/)                       | Core backend & client — functions, schema, database, auth, scheduling, file storage, search, React client patterns, Next.js, TanStack Query |
-| [convex-components](skills/convex-components/) | Official `@convex-dev/*` component ecosystem — rate limiting, aggregates, workflows, payments, presence, collaborative editing, and more    |
-| [convex-helpers](skills/convex-helpers/)       | Official utility library — custom function wrappers, relationship helpers, triggers, Zod validation, CRUD generation, sessions              |
-| [convex-agents](skills/convex-agents/)         | AI features with `@convex-dev/agent` — tool calling, threads, streaming, structured output, RAG, persistent text streaming                  |
-| [convex-security](skills/convex-security/)     | Security patterns — auth checks, RBAC, row-level access, rate limiting, audit trails, argument validation, environment variables            |
+| Skill                                          | Description                                                                                                                              |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [convex-components](skills/convex-components/) | Official `@convex-dev/*` component ecosystem — rate limiting, aggregates, workflows, payments, presence, collaborative editing, and more |
+| [convex-helpers](skills/convex-helpers/)       | Official utility library — custom function wrappers, relationship helpers, triggers, Zod validation, CRUD generation, sessions           |
+| [convex-agents](skills/convex-agents/)         | AI features with `@convex-dev/agent` — tool calling, threads, streaming, structured output, RAG, persistent text streaming               |
+| [convex-security](skills/convex-security/)     | Security patterns — auth checks, RBAC, row-level access, rate limiting, audit trails, argument validation, environment variables         |
 
 ## Which Skills Do I Need?
 
-Start with **`convex`** — the other skills build on it.
+Start with the **official Convex AI files** (`npx convex ai-files install`) for core backend patterns, then add these skills for specialized areas:
 
 For most projects, add **`convex-components`**. You'll reach for components sooner than you expect.
 
 For larger apps or teams, add **`convex-helpers`**. Custom function middleware, triggers, relationship loading, and typed validators pay off as your codebase grows.
 
-Those three cover the vast majority of Convex development. The remaining two serve specific needs:
+The remaining two serve specific needs:
 
 - **`convex-security`** — for implementing or auditing authentication, access control, rate limiting, and other security patterns
 - **`convex-agents`** — for AI features: chatbots, knowledge base search, document Q&A, AI-assisted workflows, or any LLM-powered functionality
